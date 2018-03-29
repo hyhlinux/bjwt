@@ -1,0 +1,9 @@
+app_name: bjwt
+http_port: 4009
+run_mode: dev
+auto_render: false
+copy_request_body: true
+grpc_listen: :5009
+enable_docs: true
+log_level: 7
+jwt_salt: testsalt
