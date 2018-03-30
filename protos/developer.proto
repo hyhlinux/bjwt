@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "protos/token.proto";
 import "protos/aws_email.proto";
+import "protos/message.proto";
 
 package protos;
 
@@ -33,5 +34,31 @@ service DeveloperService {
     }
 
     // 站内信 API CURD
+    rpc MessageGet(GenToekenRequest) returns (GenTokenResponse) {
+        //#gw#  option (google.api.http) = {
+        //#gw#  post: "/v1/message"
+        //#gw#  body: "*"
+        //#gw#  };
+    }
 
+    rpc MessageInsert(CheckToekenRequest) returns (CheckTokenResponse) {
+        //#gw#  option (google.api.http) = {
+        //#gw#  post: "/v1/message"
+        //#gw#  body: "*"
+        //#gw#  };
+    }
+
+    rpc MessageUpdate(CheckToekenRequest) returns (CheckTokenResponse) {
+        //#gw#  option (google.api.http) = {
+        //#gw#  post: "/v1/message"
+        //#gw#  body: "*"
+        //#gw#  };
+    }
+
+    rpc MessageDelete(CheckToekenRequest) returns (CheckTokenResponse) {
+        //#gw#  option (google.api.http) = {
+        //#gw#  post: "/v1/message"
+        //#gw#  body: "*"
+        //#gw#  };
+    }
 }

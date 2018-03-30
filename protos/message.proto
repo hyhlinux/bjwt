@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option java_package = "com.apkpure.proto";
+option java_outer_classname = "MessageService";
+
+package protos;
+
+// for grpc-gateway
+//#gw#import "google/api/annotations.proto";
+
+/*
+* MessageService
+* CURD
+*/
+service MessageService {
+    // 1. 查询接口
+    rpc MessageApi(MessageApiRequest) returns (MessageApiResponse) {
+        //#gw#  option (google.api.http) = {
+        //#gw#  post: "/v1/token"
+        //#gw#  body: "*"
+        //#gw#  };
+    }
+}
+
+
+message MessageApiRequest {
+    // CURD: FIND/INSERT/UPDATE/DELETE
+    string method = 1;
+    // 过期时间戳，单位s
+    string query = 2;
+}
+
+message MessageApiResponse {
+    // CURD: FIND/INSERT/UPDATE/DELETE
+    string method = 1;
+    // 过期时间戳，单位s
+    string query = 2;
+}
